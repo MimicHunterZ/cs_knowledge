@@ -56,21 +56,6 @@ dist/
 # garden/ 的构建产物由它自己的 .gitignore 管：
 # 字体、Excalidraw 渲染岛、画布场景、以及从 notes/ 同步进来的笔记副本。
 
-# ---------------------------------------------------------------------------
-# Retired root-level artifacts.
-#
-# Both paths were ignored by the *old* layout (`site/public/fonts/` was even
-# documented as "Regenerated, never committed"). When the vault moved into
-# notes/, the rules went away and these files flipped from "ignored" to
-# "untracked" on machines that still had them — where the next automatic
-# `git add -A` (Obsidian Git) swept 12.5 MB of regenerated webfonts plus the
-# stale root .obsidian/ state into a commit.
-#
-# Anchored with a leading slash on purpose: `.obsidian/` must not shadow the
-# vault's own notes/.obsidian/, and `site/` must not shadow garden/src/site/.
-# ---------------------------------------------------------------------------
-/.obsidian/
-/site/
 
 # ---------------------------------------------------------------------------
 # Editor / OS noise
