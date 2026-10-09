@@ -92,7 +92,7 @@ mHandler.getLooper().getQueue().postSyncBarrier();   // ① 同步屏障
 mChoreographer.postCallback(Choreographer.CALLBACK_TRAVERSAL, mTraversalRunnable, null); // ② 等 vsync
 ```
 
-- **[[同步屏障]]**：让之后的主线程消息（普通同步消息）先别执行，**优先把这次 traversal 跑完**，降低延迟。(todo: messageQueue 补充)
+- **[[同步屏障]]**：让之后的主线程消息（普通同步消息）先别执行，**优先把这次 traversal 跑完**，降低延迟。
 - **Choreographer**：把遍历对齐到 vsync，一帧内多次 `requestLayout` 会被**合并成一次**遍历（`mTraversalScheduled` 去重）。
 
 到了 vsync：`mTraversalRunnable → doTraversal() → performTraversals() → unscheduleTraversals()`（移除屏障）。

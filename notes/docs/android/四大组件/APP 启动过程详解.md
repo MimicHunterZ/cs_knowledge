@@ -19,8 +19,8 @@
 ### 第三阶段：App 进程初始化
 1. 新进程启动后，进入 `RuntimeInit`，最终调用 **[[App启动全流程：从Zygote到ActivityThread|ActivityThread]]** 的 `main()` 方法。
 2. **[[App启动全流程：从Zygote到ActivityThread|ActivityThread]].main()**：
-    - 创建主线程的 [[Handler机制：Epoll与线程间通信|Looper]] (`Looper.prepareMainLooper()`)。
-    - 创建 **[[Handler机制：Epoll与线程间通信|Handler]]** (H 类) 用于处理系统指令。
+    - 创建主线程的 [[线程消息机制|Looper]] (`Looper.prepareMainLooper()`)。
+    - 创建 **[[线程消息机制|Handler]]** (H 类) 用于处理系统指令。
     - 调用 `attach()` 方法向 [[AMS与系统调度机制|AMS]] 报到。
 
 ### 第四阶段：绑定 Application (IPC 2)
